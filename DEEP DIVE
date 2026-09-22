@@ -1,1 +1,17 @@
 Deep dive
+
+1.if there is high throughput of orders on the system we  must handle that number without letting our db to be overloaded 
+we can use a virtual queue
+
+2.if there is s high demand on sepcific order we must make it fast and easy to read and write in it so we need in memory db  like redis 
+and connect it to the main db using
+
+3.the best way to follow the condition of the robots is using heartbeat (ping pong) protocol
+so the system has an real time updated status for them
+
+4.Consistency for making orders same order is never processed twice we can use idempotency Key
+
+5.two orders can never claim the same last unit we use the queue for handling orders 
+
+6. what if some user made an order but never confirmed it or left it for a long time we need to use a Distributed Lock + TTL
+for this order so we reseve the product in the current product for ttl 10 min them if the user did not confirm it we let the products go so somebody else can buy them
