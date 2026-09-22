@@ -10,11 +10,7 @@ Functional
 -The system sends pick tasks to the assigned robots and follows their progress.
 -Packing & Handoff: When all robots assigned to an order have finished, the system knows the order is fully collected, 
 and it moves the order to the packing station and then to shipping.
-------outofscope----------
--
--
--
--
+
 
 
 
@@ -26,13 +22,7 @@ two orders can never claim the same last unit.
 -system must handle high throughput  while high traffic  events
 -Observability for robots failures    
 -law Latency for 
------out of scope------
--Security
--
--
--
--
--
+
 ---------------------------------------------------------------------------------------------------------------------------------------------
 DATA MODEL
 
