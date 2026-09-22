@@ -5,19 +5,18 @@ REQUIERMENTS
 
 Functional
 -The system receives orders.
-- It validates the order and makes sure the same order is never processed twice.
 - The system checks that every item is available and reserves it. 
 -The system decides how many robots are needed to collect it.
 -The system sends pick tasks to the assigned robots and follows their progress.
--The system must handle robot failures
 -Packing & Handoff: When all robots assigned to an order have finished, the system knows the order is fully collected, 
 and it moves the order to the packing station and then to shipping.
--system must send notifications for operators
 ------outofscope----------
 -
 -
 -
 -
+
+
 
 
 Non functional
@@ -39,14 +38,13 @@ DATA MODEL
 
 1.ORDER:
 -id
--product in order list[]
--total quantity of products
--status: (Received → Confirmed → Picking → Collected
+-products list[]
+-quantities
+-status: Received → Confirmed → Picking → Collected
  → Packed → Ready for Shipping, or Cancelled / Failed
--total price)
+-total price
 -number of robots assigned to collect it
 -timestampe
--metadata...
 
 
 2.ROBOTS
@@ -66,16 +64,17 @@ DATA MODEL
 -id
 -quantity
 -location
--metadata....
+-
 
-
-4.user
--id
--name
-email
-metadata....
 
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
-API
+<img width="1364" height="808" alt="image" src="https://github.com/user-attachments/assets/55b1e874-1964-462e-aabb-a50271d48c70" />
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+high level design
+<img width="648" height="365" alt="Screenshot 2026-09-22 at 1 32 35 PM" src="https://github.com/user-attachments/assets/31cec687-cf56-4890-b80d-8f2fb5e03556" />
+
+
+
